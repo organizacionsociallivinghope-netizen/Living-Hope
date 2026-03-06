@@ -11,45 +11,46 @@
 
 --color-principal:#C07ED6;
 --color-secundario:#CDC4D8;
-
 --color-acento:#E4BB08;
---color-acento2:#E4DA17;
-
---color-oscuro:#171B00;
 --color-verde:#08440E;
-
---color-tierra:#503001;
+--color-oscuro:#171B00;
 
 }
 body{
+font-family:Arial, sans-serif;
+background:#f8f8fb;
 margin:0;
-font-family:Arial;
-background:var(--color-secundario);
 color:var(--color-oscuro);
 }
 
 header{
-background:var(--color-principal);
+background: linear-gradient(90deg, #C07ED6, #CDC4D8);
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
 }
 
 nav{
-background:var(--color-tierra);
-padding:10px;
+background:white;
+padding:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 text-align:center;
 }
 
 nav a{
-color:white;
-margin:15px;
+margin:0 15px;
 text-decoration:none;
-font-weight:bold;
+color:#171B00;
+font-weight:600;
+}
+nav a:hover{
+color:var(--color-principal);
 }
 
 section{
-padding:60px;
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
 }
 
 .hero{
@@ -73,13 +74,16 @@ flex-wrap:wrap;
 
 .card{
 background:white;
-padding:20px;
+padding:25px;
 border-radius:10px;
 border-top:5px solid var(--color-principal);
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 flex:1;
 }
 
+.card h3{
+color:var(--color-principal);
+}
 footer{
 background:var(--color-oscuro);
 color:white;
@@ -98,6 +102,18 @@ border-radius:5px;
 cursor:pointer;
 }
 
+.boton-donar{
+background:var(--color-acento);
+color:black;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.boton-donar:hover{
+background:#E4DA17;
+}
 </style>
 
 </head>
