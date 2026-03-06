@@ -42,30 +42,62 @@
 
         /* --- NAVEGACIÓN --- */
         nav {
-            background: var(--blanco);
-            padding: 15px 0;
-            border-bottom: 2px solid var(--color-lila-claro);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            text-align: center;
+        background: var(--blanco);
+        padding: 0; /* Ajustado para que el link ocupe todo el alto */
+        border-bottom: 1px solid rgba(157, 115, 175, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: center;
+        gap: 10px;
         }
 
         nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: var(--color-lila-oscuro);
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: 0.3s;
+        display: inline-block;
+        padding: 20px 25px;
+        text-decoration: none;
+        color: var(--color-lila-oscuro);
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        transition: all 0.3s ease;
         }
 
+        nav a::before {
+        margin-right: 8px;
+        font-size: 1rem;
+        vertical-align: middle;
+        }
+        nav a[href="#causa"]::before { content: "🌻"; }
+        nav a[href="#quienes"]::before { content: "👥"; }
+        nav a[href="#equipo"]::before { content: "🤝"; }
+        nav a[href="#proyectos"]::before { content: "📚"; }
+        nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        left: 50%;
+        background-color: var(--color-lila-fuerte);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+        }
         nav a:hover {
             color: var(--color-lila-fuerte);
+            background-color: var(--color-lila-claro);
         }
 
+        nav a:hover::after {
+        width: 100%;
+        }
+        
         /* --- HERO SECTION --- */
         .hero-container {
             padding: 30px 5%;
@@ -165,7 +197,14 @@
         @media (max-width: 768px) {
             .hero-content h2 { font-size: 2rem; }
             .hero { height: 350px; }
-            nav a { margin: 0 8px; font-size: 0.7rem; }
+            nav {
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+            nav a {
+                padding: 10px 15px;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
